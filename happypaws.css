@@ -1,6 +1,19 @@
 body {
   background-color: #ecc7c7;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #e7d8e8;
+}
+
+button {
+  border-radius: 6px;
+  background-color: #e7d8e8;
+}
 
 .hbar {
   height: 120px;
@@ -21,7 +34,7 @@ body {
 }
 
 #search {
-  font-size: large ;
+  font-size: large;
   font: arial;
   height: 37px;
   width: 400px;
@@ -32,8 +45,6 @@ body {
   position: relative;
   margin-right: 140px;
   margin-top: 30px;
-  
-  
 }
 
 .hbar svg {
@@ -54,5 +65,5 @@ body {
 }
 
 #sign:hover {
-  color: aqua;
+  color: white;
 }
