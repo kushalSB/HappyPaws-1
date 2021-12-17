@@ -16,7 +16,12 @@ button {
 }
 
 .navlist {
-  margin-right: 20px;
+  margin-right: 30px;
+}
+
+.movenav{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .hbar {
