@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 80px;
+    font-family: 'Raleway', sans-serif;
+    color: #111010;
+}
+#container-login {
+    background-color: #F6E5E5;
+    position: relative;
+    top: 20%;
+    margin: auto;
+    width: 740px;
+    height: 445px;
+    border-radius: 3em;
+    box-shadow: 0 3px 10px 0 rgba(240, 200, 200, 0.87);
+    text-align: left;
+    
+}
+
+
+
+input[type=text] {
+    color: #949494;
+    margin-right:auto;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 8px 0px;
+    border-radius: 3px;
+}
+input[type=text]:focus {
+    border: 1px solid #373b3d;
+}
+input[type=password] {
+    color: #949494;
+    margin: 5;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 8px 0px;
+    border-radius: 3px;
+}
+input[type=password]:focus {
+    border: 1px solid #373b3d;
+}
+.forgot-password {
+    position: relative;
+    bottom: -1%;
+}
+.forgot-password a:link {
+    color: #708080;
+    text-decoration: none;
+}
+.forgot-password a:visited {
+    color: #C1C3C6;
+    text-decoration: none;
+}
+.forgot-password a:hover {
+    color: rgb(216, 38, 38);
+    transition: color 1s;
+}
+.register {
+    margin: auto;
+  
+    padding: 16px 0;
+    text-align: left;
+    margin-top: 40px;
+    width: 85%;
+    border-top: 1px solid #121213;
+}
+
+#register-link {
+    margin-top: 10px;
+    padding: 12px 25px;
+    background: #f0b3db;
+    color: #0a0a0a;
+    font-weight: bold;
+    border: 2px solid #121213;
+    cursor: pointer;
+    border-radius: 3em;
+    
+}
+.forgot-password{
+    margin: auto;
+  
+    padding: 16px 0;
+    text-align: left;
+    
+    width: 85%;
+    
+
+}
+.input{
+    margin: auto;
+  
+    padding: 4px 0;
+    text-align: left;
+    
+    width: 85%;
+    
+}
+.login{
+    margin:auto;
+    padding:12px 25px;
+    text-align:left;
+    width:55%;
+    
+    
+    
+    
+    
+   
+}
