@@ -90,7 +90,19 @@ button {
   font-weight: 600;
 }
 
-.quantity {
+.quantitynumber {
+  margin-top: 50px;
+}
+
+.buy {
+  margin-top: 50px;
+}
+
+.addcart {
+  margin-left: 30px;
+}
+
+.aboutprod {
   margin-top: 50px;
 }
 
