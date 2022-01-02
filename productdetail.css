@@ -71,6 +71,29 @@ button {
   margin-right: 20px;
 }
 
+.prodimg img {
+  margin-top: 50px;
+  margin-left: 40px;
+  width: 256px;
+  height: 256px;
+}
+
+.prod_title {
+  margin-top: 50px;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.price {
+  margin-top: 20px;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.quantity {
+  margin-top: 50px;
+}
+
 #sign {
   font-size: large;
   width: 90px;
