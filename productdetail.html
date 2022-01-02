@@ -5,8 +5,9 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="productdetail.css" />
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="happy paws scripts/productdetail.js"></script>
         <title>prouctdetail</title>
     </head>
@@ -75,13 +76,13 @@
                             Quantity
                             <div class="input-group">
                               <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" onclick="decrement()">
                                   <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                               </span>
-                              <input type="number" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                              <input type="number" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="10">
                               <span class="input-group-btn">
-                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" onclick="increment()">
                                       <span class="glyphicon glyphicon-plus"></span>
                                   </button>
                               </span>
