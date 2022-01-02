@@ -76,13 +76,16 @@
                             Quantity
                             <div class="input-group">
                               <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" onclick="decrement()">
+                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  
+                                data-type="minus" data-field="" onclick="decrement()">
                                   <span class="glyphicon glyphicon-minus"></span>
                                 </button>
                               </span>
-                              <input type="number" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="10">
+                              <input type="number" id="quantity" name="quantity" class="form-control input-number" 
+                              value="1" min="1" max="10" disabled>
                               <span class="input-group-btn">
-                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" onclick="increment()">
+                                  <button type="button" class="quantity-right-plus btn btn-success btn-number" 
+                                  data-type="plus" data-field="" onclick="increment()">
                                       <span class="glyphicon glyphicon-plus"></span>
                                   </button>
                               </span>
