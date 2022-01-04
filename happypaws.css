@@ -1,5 +1,5 @@
 body {
-  background-color: #ecc7c7;
+  background-color: white;
 }
 a {
   text-decoration: none;
@@ -15,17 +15,23 @@ button {
   background-color: #e7d8e8;
 }
 
+.navdiv {
+  height: 50px;
+}
+
 .navlist {
   margin-right: 30px;
 }
 
-.movenav{
+.movenav {
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .hbar {
-  height: 120px;
+  background-image: url("/images/heading_image.png");
+  background-repeat: no-repeat;
+  height: 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,6 +46,14 @@ button {
   width: 30%; 
   margin-top: 45px;
   margin-left: 200px; */
+}
+
+.homefoot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 #search {
