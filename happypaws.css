@@ -54,7 +54,7 @@ button {
   margin-bottom: 40px;
   margin-left: 20px;
   margin-right: 50px;
-  background-color: rgb(252, 252, 252);
+  background-color: rgb(250, 250, 250);
 }
 
 .box:hover {
@@ -94,6 +94,7 @@ button {
 }
 
 .producthome {
+  background-color: white;
   margin-top: 40px;
   margin-left: 20px;
 }
@@ -131,4 +132,10 @@ button {
 
 #sign:hover {
   color: white;
+}
+
+.botfoot {
+  background-color: #6f6d6d;
+  border-radius: 10px;
+  height: 30px;
 }
