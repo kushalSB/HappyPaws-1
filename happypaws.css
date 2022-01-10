@@ -69,11 +69,23 @@ button {
   height: 180px;
 }
 
+.slider {
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slider img,
+button {
+  height: 400px;
+}
+
 .box {
   width: 250px;
   height: 350px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card {
@@ -94,8 +106,8 @@ button {
 }
 
 .producthome {
-  background-color: white;
   margin-top: 40px;
+  background-color: white;
   margin-left: 20px;
 }
 
