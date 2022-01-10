@@ -69,7 +69,7 @@ body {
     margin-right: 140px;
     margin-top: 30px;
   }
-  
+
   .hbar svg {
     margin-left: 180px;
   }
@@ -91,10 +91,17 @@ body {
     color: rgb(21, 143, 243);
   }
 dropdown-menu:hover, dropdown-item:hover, a:hover {
+  transform: scale(1.2);
+  display: block;
+
+
   
-  background-color:palegreen
+  background-color:rgb(97, 186, 238)
   
     
+}
+.nav-item dropdown :hover .dropdown-menu{
+  display: block;
 }
 .homefoot {
   position: absolute;
@@ -104,3 +111,8 @@ dropdown-menu:hover, dropdown-item:hover, a:hover {
   text-align: center;
 }
 
+.page-footer font-small homefoot:hover{
+  transform: scale(1.2);
+}
+/* </style> */
+/* <div class ="homefoot"</div> */
