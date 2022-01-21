@@ -1,0 +1,125 @@
+body {
+    background-color: #fdfcfc;
+    background-image: url('MicrosoftTeams-image\ \(1\).png');
+}
+
+.hbar {
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    /* display: inline-block; */
+}
+.searchbar {
+    /* display: inline-block; */
+    /* width: 30%; */
+    /* margin-top: 45px;
+    margin-left: 200px; */
+}
+
+#search {
+    font-size: xx-large;
+
+    /* width: 150%; */
+    /* padding-right: 50px; */
+
+    text-indent: 20px;
+
+    border: 2px;
+    border-radius: 10px;
+}
+
+.hbar svg {
+    margin-left: 180px;
+}
+
+.signhome {
+    /* float: right; */
+}
+
+#sign {
+    font-size: large;
+    width: 110px;
+    height: 50px;
+
+    border: 2px;s
+    border-radius: 16px;
+}
+
+#sign:hover {
+    color: aqua;
+}
+
+.slider-box{
+    width: 60%;
+    height: 73vh;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#slider {
+    width: 100%;
+    height: 88%;
+    display: inline-flex;
+    transition: 0.7s;
+}
+
+#slider img{
+    width: 100%;
+}
+
+.active{
+    background: #fff !important;
+}
+
+.indicators{
+    position:absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translate(-50%);
+}
+
+.indicators span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50% ;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.pet{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: black solid 10px;
+    float: left;
+    justify-content: center;
+
+    left: 400.5px;
+    top: 208px;
+}
+
+
+.product{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: black solid 10px;
+    float: right;
+    justify-content: center;
+
+    left: 698.5px;
+    top: 208px;
+}
+
+.container img:hover{
+    transform: scale(1.5);
+    animation-timing-function: ease-in;
+    cursor: pointer;
+}
