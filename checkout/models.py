@@ -1,6 +1,7 @@
 from django.db import models
 from cart.models import Order
 from customer.models import Customer
+from django.contrib import admin
 # Create your models here.
 
 class Shipping(models.Model):
@@ -12,6 +13,10 @@ class Shipping(models.Model):
 
     def __str__(self):
         return self.address
+
+class ShippingAdmin(admin.ModelAdmin):
+    list_display = ('customer', 'order', 'city', 'address', 'date_added')
+admin.site.register(Shipping, ShippingAdmin)
 
 
 
