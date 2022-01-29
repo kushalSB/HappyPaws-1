@@ -1,0 +1,176 @@
+body {
+    background-color: #fdfcfc;
+}
+
+/* .bg{
+    opacity: 0.5;
+} */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #e7d8e8;
+}
+
+button {
+    border-radius: 6px;
+    background-color: #e7d8e8;
+}
+
+.navdiv {
+    height: 50px;
+}
+
+.navlist {
+    margin-right: 30px;
+    /* background-color: aqua; */
+}
+
+.movenav {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hbar {
+    background-image: url("images/heading_image.png");
+    background-repeat: no-repeat;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    /* display: inline-block; */
+}
+
+.searchbar {
+    /* display: inline-block;
+width: 30%; 
+margin-top: 45px;
+      margin-left: 200px; */
+}
+
+#search {
+    font-size: large;
+    font: arial;
+    height: 37px;
+    width: 400px;
+    margin-left: 50px;
+    text-indent: 20px;
+    border: 2px;
+    border-radius: 10px;
+    position: relative;
+    margin-right: 140px;
+    margin-top: 30px;
+}
+
+.hbar svg {
+    margin-left: 180px;
+}
+
+.signhome {
+    margin-right: 20px;
+}
+
+#sign {
+    font-size: large;
+    width: 90px;
+    height: 45px;
+
+    border: 29px;
+    border-radius: 16px;
+}
+
+#sign:hover {
+    color: white;
+}
+
+.homefoot {
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
+}
+
+.bg{
+    background-image: url('images/groupPic.jpg');  
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+
+.animal_photos{
+    margin-top: 150px;
+    
+}
+/* .rounded{
+    border-radius: 50%;
+}
+.rounded{
+height: 250px;
+width: 350px;
+clip-path: circle();
+border:8px solid transparent;
+border-radius: 50%;
+padding: 1px;
+background: linear-gradient(90deg, #efa51a, #ce00);
+} */
+
+.cat{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(95, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.bird{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.fish{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.dog{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.categoryline img:hover{
+    transform: scale(1.5);
+    animation-timing-function: ease-in;
+}
+
+/* 
+.hover1 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    
+}
+.hover1 figure:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+    
+} */
