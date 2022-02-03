@@ -1,0 +1,297 @@
+{% extends 'rootpage.html' %}
+{% load static %}
+<html>
+
+{% block content%}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/new.css' %} " />
+    <title>Happy Paws</title>
+
+    <style>
+        .box {
+            box-shadow: hsl(0, 3%, 65%) 0 0 16px;
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .cartrow {
+            display: flex;
+            align-items: flex-stretch;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-bottom: 1px rgb(47, 38, 38);
+        }
+    </style>
+</head>
+
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- header -->
+            <div class="hbar" style="background-color: #ecc7c7;">
+                <div class="logo"> <img src="{% static  'img/images/logo.png' %}" width="128px" height="128px" /> </div>
+
+                <div class="searchbar">
+                    <form>
+                        <input type="search" id="search" name="search" />
+                    </form>
+                </div>
+
+                <div class="signhome">
+                    <form>
+                        <button id="sign"><b>Sign in</b></button>
+                    </form>
+                </div>
+            </div>
+            <!-- navigationbar -->
+            <div class="col-lg-12" style="background-color: aqua; height: 50px;">
+
+                <nav class="  navbar navbar-expand-lg navbar-light bg-light ">
+
+                    <div class="collapse navbar-collapse " id="navbarNav">
+                        <ul class="navbar-nav navlist ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link movenav" href="#"> All categories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link movenav" href="#">Pets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link movenav" href="#">Pet accessories</a>
+                            </li>
+                            <li class="nav-item movenav">
+                                <a class="nav-link" href="#">Pet Food</a>
+                            </li>
+                            <li class="nav-item movenav">
+                                <a class="nav-link" href="#">Our services</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+
+
+            </div>
+
+
+            <div class="container-fluid" style="background-color: rgb(250, 244, 244);">
+                <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
+                    <div class="col-lg-12">
+
+                        <div class="box">
+                            <p style="font-family: Arial, Helvetica, sans-serif;">
+                                <a class="btn btn-outline-dark" href="{% url 'home' %}">&#8592; Continue Shopping? </a>
+                                <strong>
+                                    <spam style="margin-left:400px;">Your Order Summary </spam>
+                                </strong>
+                            </p>
+                            <br>
+                            <hr>
+
+
+                            <div class="cartrow">
+                                <div style="flex:2">
+                                    Image
+                                </div>
+                                <div style="flex:2">
+                                    Item
+                                </div>
+                                <div style="flex:1">
+                                    Price
+                                </div>
+                                <div style="flex:1">
+                                    Quantity
+                                </div>
+                                <div style="flex:1">
+                                    Total
+                                </div>
+                            </div>
+
+                            {% for item in items %}
+
+                            <div class="cartrow">
+                                <div style="flex:2">
+                                    <img src="{{item.item.imageurl}}" width="100px">
+                                </div>
+
+                                <div style="flex:2">
+                                    {{item.item.title}}
+                                </div>
+                                <div style="flex:1">
+                                    Rs{{item.item.price}}
+                                </div>
+                                <div style="flex:1">
+
+                                    <p style="display: inline-block; padding-right: 10px; position: sticky; top:0px ">
+                                        {{item.quantity}}
+                                    </p>
+
+                                    <div style="display: inline-block;">
+                                        <img class="update-cart-data" data-product="{{item.item.id}}" data-action="add"  style="width: 12px; cursor: pointer; display: block; transition: 5s;"
+                                            src="{% static 'img/images/arrow-up.png'  %}" />
+                                        <img class="update-cart-data" data-product="{{item.item.id}}" data-action="remove"  style="width: 12px; display: block; cursor: pointer;margin-top: 5px;transition: 0.1s; "
+                                            src="{% static 'img/images/arrow-down.png'  %}" />
+
+                                    </div>
+
+                                </div>
+                                <div style="flex:1">
+                                    {{item.getTotal}}
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            <br>
+                            <hr>
+
+
+
+                        </div>
+
+                        <br>
+
+                        <div class="box">
+                            <div class="cartrow">
+
+                                <div style="flex:1">
+                                    Items: {{order.getCartItems}}
+
+                                </div>
+                                <div style="flex:1">
+                                    Total price: {{order.getCartTotal}}
+
+                                </div>
+
+
+                                <a class="btn btn-success" href="{% url 'checkout' %} ">
+                                    Checkout
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+            <div style="background-color: white;">
+                <hr>
+            </div>
+
+
+            <!-- for images -->
+
+            <div class="col-lg-12" style="background-color: white;">
+
+                <p
+                    style="font-family: Arial, Helvetica, sans-serif; font-size: 24; font-weight: strong; margin-left: 600px; margin-bottom: 50px;">
+                    Related Products </p>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center p-3 ">
+                        <img src="{% static 'img/images/logo.png' %}" width="150px" />
+                        <p class="text-info"> name </p>
+                        <p class="text-info"> price </p>
+                        <button> add to cart</button>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center p-3 ">
+                        <img src="{% static 'img/images/logo.png' %}" width="150px" />
+                        <p class="text-info"> name </p>
+                        <p class="text-info"> price </p>
+                        <button> add to cart</button>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center p-3 ">
+                        <img src="{% static 'img/images/logo.png' %}" width="150px" />
+                        <p class="text-info"> name </p>
+                        <p class="text-info"> price </p>
+                        <button> add to cart</button>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small homefoot" style="margin-top: auto;">
+
+        <!-- Footer Links -->
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row text-center d-flex justify-content-center mb-0"
+                style="background-color: #ACA8A8; border-radius: 10px; height: 30px;">
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3 pt-1">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!">About us</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3 pt-1">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!">Help</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3 pt-1">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="#!">Contact us</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Footer Links -->
+
+    </footer>
+    <!-- Footer -->
+    </div>
+   
+    {% endblock %}
+
+
+</body>
+
+
+
+</html>
