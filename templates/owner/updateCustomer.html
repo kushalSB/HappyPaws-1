@@ -1,0 +1,40 @@
+{% load static %}
+
+
+<form  action="" method="post" >
+    {%csrf_token%}
+    <div class="form-field"  >
+        <input class="form-control"  name="name" value={{customer.name}}  placeholder="First name" />
+    </div>
+    <br/>
+    <div>
+        <input  name="email" value={{customer.email}}  placeholder="Email" />
+    </div>
+    <br/>
+    <div>
+        <input  name="address" value={{customer.address}}  placeholder="Address" />
+    </div>
+    <br/>
+    <div>
+        <input  name="phone" value={{customer.phone}}  placeholder="Contact" />
+    </div>
+    <br/>
+
+    <div>
+        <input name="username" value={{customer.username}}  placeholder="Username" />
+    </div>
+    <br/>
+    <div>
+        <input type="password" value={{customer.password}} name="password" placeholder="Password" />
+    </div>
+    <br/>
+    <div>
+        <input type="reward_point" value={{customer.reward_point}} name="reward_point" placeholder="Reward Point" />
+    </div>
+    <br>
+    <div>
+        <input type="submit" name="register" placeholder="Create" />
+    </div>
+    
+    
+</form>
