@@ -1,0 +1,38 @@
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Georama">
+  <title>Login Page - {% block title %}{% endblock %} </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static'login.css' %}" />
+</head>
+
+<body>
+
+  <div class="bg">
+
+    <div class="bgimg">
+      <form class="login" method ="post">
+        {% csrf_token %}
+
+
+        <h1><b>Login</b></h1>
+        <p style="color: rgb(229, 250, 41)" ; , "text-muted"><b> Please enter your username and password!</b></p>
+
+
+        <input type="text" style="font-weight: bold;" placeholder="Username" required>
+
+        <input type="password" style="color:rgb(22, 22, 21); font-weight: bold;" placeholder="Password" />
+        <input type="button" value="Login" />
+        <div class="register">
+          <p style="color:red"><b>Don't have an account yet?</b></p>
+          <A HREF="/HappyPaws-registration/registration1.html"> <input type="button" value="Sign Up" /></A>
+
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
