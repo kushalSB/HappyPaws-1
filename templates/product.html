@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +8,8 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="/static/css/products.css" />
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  <link rel="stylesheet" href="{% static'/static/css/products.css' %}" />
+  <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
@@ -20,7 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
     integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Happy Paws || Product categories</title>
+  <title>Happy Paws || Product categories - {% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
 
         <div class="logo">
           <a href="/templates/home.html">
-            <img src="/static/img/images/logo.png" width="128px" height="128px" />
+            <img src="{% static'/static/img/images/logo.png' %}" width="128px" height="128px" />
           </a>
         </div>
 
@@ -42,7 +43,7 @@
         </div>
 
         <div class="notification">
-          <a href="#"><img src="/static/img/images/notification.png" width="64px" height="64px" /></a>
+          <a href="#"><img src="{% static'/static/img/images/notification.png' %}" width="64px" height="64px" /></a>
         </div>
 
         <div class="signhome">
@@ -114,7 +115,7 @@
           <!-- <h4>corgi</h4> -->
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/pediree.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static '/static/img/prodImages/pediree.jpg' %}" alt="Card image cap">
               <a class="detail" href="/product detail/productdetail.html">
                 <div class="card-body">
                   <h5 class="card-title"> Pedigree</h5>
@@ -126,7 +127,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/Drools.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/Drools.jpg' %}" alt="Card image cap">
               <a class="detail" href="/product detail/productdetail.html">
                 <div class="card-body">
                   <h5 class="card-title"> Drools</h5>
@@ -138,7 +139,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/Reflex.png" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/Reflex.png' %}" alt="Card image cap">
               <a class="detail" href="/product detail/productdetail.html">
                 <div class="card-body">
                   <h5 class="card-title"> Reflex cat food</h5>
@@ -150,7 +151,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/calciummilkbone.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/calciummilkbone.jpg' %}" alt="Card image cap">
               <a class="detail" href="/product detail/productdetail.html">
                 <div class="card-body">
                   <h5 class="card-title"> Calcium milk bone</h5>
@@ -162,7 +163,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/catonly.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/catonly.jpg' %}" alt="Card image cap">
               <a class="detail" href="/product detail/productdetail.html">
                 <div class="card-body">
                   <h5 class="card-title"> Cat only pet snacks</h5>
@@ -175,7 +176,7 @@
 
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/droolskitten.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/droolskitten.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Drools kitten food</h5>
                 <p class="card-text">Rs.5000</p>
@@ -185,7 +186,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/himalaya.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/himalaya.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Himalaya healthy pet food</h5>
                 <p class="card-text">Rs.4000</p>
@@ -195,7 +196,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/oat bone.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/oat bone.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Oat bone</h5>
                 <p class="card-text">Rs.1000</p>
@@ -211,7 +212,7 @@
           <!-- <h4>Cats</h4> -->
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/neckcollar.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{%static'/static/img/prodImages/neckcollar.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Cat Dog neck collar </h5>
                 <p class="card-text">Rs.400</p>
@@ -221,7 +222,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/bodybeltfordog.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/bodybeltfordog.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Body Belt for Dog </h5>
                 <p class="card-text">Rs.2000</p>
@@ -231,7 +232,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/greenyellow.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/greenyellow.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Green/Yellow Adjustable Size|| Dog and Cat Collar </h5>
                 <p class="card-text">Rs.2000</p>
@@ -241,7 +242,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/pink.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/pink.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Pink Adjustable Size Puppy Dog and Cat Neck Belt </h5>
                 <p class="card-text">Rs.2000</p>
@@ -251,7 +252,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/purple.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/purple.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Purple Neck Belt With Bell For Small Dogs </h5>
                 <p class="card-text">Rs.249</p>
@@ -262,7 +263,7 @@
 
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/redneckbelt.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static '/static/img/prodImages/redneckbelt.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Red Dog Neck Belt With Bell</h5>
                 <p class="card-text">Rs.5000</p>
@@ -272,7 +273,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/foam.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/foam.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Foam Neck Belt for small dogs</h5>
                 <p class="card-text">Rs.4000</p>
@@ -282,7 +283,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/blackyellow.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/blackyellow.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Black/Yellow Dog Neck Belt (1.5 cm)</h5>
                 <p class="card-text">Rs.1000</p>
@@ -298,7 +299,7 @@
 
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/doggies.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/doggies.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Doggies shampoo</h5>
                 <p class="card-text">Rs.300</p>
@@ -308,7 +309,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/antidandruff.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/antidandruff.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">All Pets Anti-Dandruff Shampoo</h5>
                 <p class="card-text">Rs.900</p>
@@ -318,7 +319,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/antitick.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/antitick.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Anti Tick Soap Bar</h5>
                 <p class="card-text">Rs.550</p>
@@ -328,7 +329,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/conditioning shampoo.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/conditioning shampoo.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Pet Conditioning Shampoo</h5>
                 <p class="card-text">Rs.800</p>
@@ -338,7 +339,7 @@
           </div>
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/flea.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static '/static/img/prodImages/flea.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Flea Removal Powder</h5>
                 <p class="card-text">Rs.1500</p>
@@ -350,7 +351,7 @@
 
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/olive.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static '/static/img/prodImages/olive.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Olive Essence Dog Shampoo </h5>
                 <p class="card-text">Rs.590</p>
@@ -361,7 +362,7 @@
 
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/divine.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/divine.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Divine Doggie Soap</h5>
                 <p class="card-text">Rs.4000</p>
@@ -373,7 +374,7 @@
 
           <div class="col-lg-3">
             <div class="card box">
-              <img class="card-img-top" src="/static/img/prodImages/caredom.jpg" alt="Card image cap">
+              <img class="card-img-top" src="{% static'/static/img/prodImages/caredom.jpg' %}" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Caredom Lotus Clean Soap</h5>
                 <p class="card-text">Rs.1000</p>
@@ -429,14 +430,14 @@
   <!-- </footer> -->
   <!-- Footer -->
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  <script src="{% static'https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js' %}"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  <script src="{% static'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js' %}"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+  <script src="{% static'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js' %}"></script>
+  <script src="{% static'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js' %}"
     integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="text/javascript">
