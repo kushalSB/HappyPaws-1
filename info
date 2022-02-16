@@ -1,0 +1,42 @@
+create project -> django-admin startproject crudprj
+
+create app -> python manage.py startapp enroll
+
+create folder static inside enroll
+    then enroll
+        create css and js folder
+
+enroll me templates folder
+    enroll
+        base.html
+
+Setup bootsrapp in static folder
+
+Add "enroll" in INSTALLED_APPS settings.py
+
+templates-enroll - addshow.html & updatestud.html
+
+TILL 16:00
+
+render in app view file
+
+projects urls.py file
+
+to run terminal -> python manage.py runserver
+
+Register models in app admin.py in order to access model table from admin app
+
+Now Make Migrations to create table
+terminal -> 
+    python manage.py makemigrations
+    python manage.py migrate
+
+TILL 26:50
+
+Create superuser for admin panel
+    python manage.py createsuperuser
+
+
+create forms.py
+
+Till 01:09:00
