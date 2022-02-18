@@ -24,7 +24,8 @@ def create_products_view(request):
         if form.is_valid():
             form.save()
     object = Category.objects.all()
-    context = {'form': form, 'object': object}
+    subCat = NewSubCategory.objects.all()
+    context = {'form': form, 'object': object, 'subcategory': subCat}
     return render(request, 'product/createproduct.html', context)
 
 def product_view(request, id):

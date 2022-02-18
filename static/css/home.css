@@ -232,7 +232,7 @@ a:hover {
 
 .pets:hover  .dropdown-menu {
   display: block;
-  margin-left: 160; 
+  margin-left: 140; 
 }
 
 .userhover:hover  .dropdown-menu {
