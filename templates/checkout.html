@@ -34,7 +34,8 @@
 </head>
 
 <div class="row">
-    <div class="col-lg-6"  style="margin-left: 150px; width: 400px;box-shadow: hsl(0, 3%, 90%) 0 0 16px;background-color: #fff;">
+    <div class="col-lg-6"
+        style="margin-left: 150px; width: 400px;box-shadow: hsl(0, 3%, 90%) 0 0 16px;background-color: #fff;">
         <div class="box-element" id="form-wrapper">
             <form id="form">
                 <div id="user-info">
@@ -51,7 +52,7 @@
 
                 <div id="shipping-info">
                     <br>
-                    
+
                     <p style="font-family: Arial, Helvetica, sans-serif;line-height: 1;
                     font-size:20px; color: #000;">Shipping Information:</p>
                     <hr>
@@ -252,8 +253,6 @@
         var userShippingData = {
             'address': null,
             'city': null,
-            'state': null,
-            'zipcode': null,
 
 
         }
@@ -261,8 +260,7 @@
         if (shipping != 'False') {
             userShippingData.address = form.address.value
             userShippingData.city = form.city.value
-            userShippingData.state = form.state.value
-            userShippingData.zipcode = form.zipcode.value
+
 
         }
 

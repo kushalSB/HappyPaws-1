@@ -100,7 +100,7 @@ urlpatterns = [
 
     path('notifications/', notification_view, name='notifications'),
     path('delete/<str:pk>/', notification_delete, name='delete'),
-
+    path('orderhistory/<int:pk>/', order_history, name='orderhistory'),
 
 ]
 

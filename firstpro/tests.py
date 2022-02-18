@@ -2,7 +2,7 @@ from ast import arg
 from email.mime import image
 import imp
 from sys import implementation
-from turtle import home
+from turtle import home, title
 from venv import create
 from django.test import TestCase, SimpleTestCase, Client
 from django.urls import reverse, resolve
@@ -10,9 +10,11 @@ from customer.views import *
 from cart.views import *
 from products.views import *
 from checkout.views import *
+from notification.views import *
 from owner.views import *
 from pages.views import *
 from cart.models import *
+from notification.models import *
 from checkout.models import *
 from customer.models import *
 from products.models import *
@@ -544,5 +546,28 @@ class test_views(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'product/detail.html')
     
+    def text_notification_view(self):
+        user = User.objects.create(username="username")
+        user.set_password('password')
+        user.save()
+        client = Client()
+        logged_in = client.login(username="username", password="password")
+
+        
+        customer = Customer.objects.create(
+            id=1,
+            user=user,
+            name='full name',
+            email='test@email.com',
+            phone='918181818',
+            username='username',
+            password='password'
+        )
+
+        notification = Notification.objects.create(
+            title='Testing notification',
+            description = 'testing the notification feature'
+        )
+        url = reverse('notifications', args=[notification.id])
 
     # admin part test 
