@@ -101,6 +101,9 @@ urlpatterns = [
     path('notifications/', notification_view, name='notifications'),
     path('delete/<str:pk>/', notification_delete, name='delete'),
 
+    path('create-message', message_view, name='create-message'),
+    path('manage-messages/', manageMessages, name='manage-message'),
+
 
 ]
 

@@ -1,4 +1,5 @@
 from itertools import product
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from cart.models import *
 from customer.forms import *
@@ -8,6 +9,8 @@ from products.forms import *
 from cart.forms import *
 from checkout.forms import *
 import datetime
+from contact.models import *
+from contact.views import *
 
 
 def delete_shipping_order(request, pk):
@@ -191,4 +194,7 @@ def updateOrder(request, pk):
     'orderCustomer': orderCustomer_object}
     return render(request, 'owner/updateOrder.html', context)
 
-
+def manageMessages(request):
+    messages = Contact.objects.all()
+    context = {'messages': messages}
+    return render(request, "owner/messages.html", context)

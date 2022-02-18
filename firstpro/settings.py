@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'owner',
     'notification',
     'crispy_forms',
+    'contact',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

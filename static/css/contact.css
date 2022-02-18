@@ -1,159 +1,140 @@
-body {
-    background-color: white;
-}
-a {
-    text-decoration: none;
-    color: white;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800;900&display=swap');
+*{
+font-family: 'Poppins', sans-serif;
 }
 
+body {
+background-color: #fafafa;
+overflow-x: hidden;
+}
+/* 
+a:not(.detail) {
+text-decoration: none;
+color: white;
+} */
+
 a:hover {
-    color: #e7d8e8;
+color: #e7d8e8;
 }
 
 button {
-    border-radius: 6px;
-    background-color: #e7d8e8;
+border-radius: 6px;
+background-color: #ffffff;
+}
+
+.navdiv {
+height: 50px;
 }
 
 .navlist {
-    margin-right: 30px;
+margin-right: 30px;
 }
 
 .movenav {
-    margin-left: 10px;
-    margin-right: 10px;
+margin-left: 10px;
+margin-right: 10px;
 }
 
-.hbar {
-    background-image: url("images/heading_image.png");
-    background-repeat: no-repeat;
-    height: 150px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    /* display: inline-block; */
-}
-
-.searchbar {
-    /* display: inline-block;
-    width: 30%; 
-    margin-top: 45px;
-    margin-left: 200px; */
-}
-
-#search {
-    font-size: large;
-    font: arial;
-    height: 37px;
-    width: 400px;
-    margin-left: 50px;
-    text-indent: 20px;
-    border: 2px;
-    border-radius: 10px;
-    position: relative;
-    margin-right: 140px;
-    margin-top: 30px;
-}
-
-.hbar svg {
-    margin-left: 180px;
-}
-
-.signhome {
-    margin-right: 20px;
-}
-
-#sign {
-    font-size: large;
-    width: 90px;
-    height: 45px;
-
-    border: 2px;
-    border-radius: 16px;
-}
-
-#sign:hover {
-    color: white;
-}
-
-
-
-.box1{
-width: 230px;
-height: 90px;
-border-radius: 20px;
-border: rgb(8, 8, 8) solid 2px;
-background-color: #d9d9d9;
-margin-left: auto;
-margin-right: auto;
-margin-top: 30px;
-box-shadow: 0 4px 8px 0 rgba(0, 150, 209, 0.2), 0 6px 20px 0 rgba(81, 160, 235, 0.29);
-}
-/* .box2{
-width: 200px;
-height: 90px;
-border-radius: 20px;
-border: rgb(8, 8, 8) solid 2px;
+/* .nav-item dropdown :hover .dropdown-menu{
+display:inline;
+background-color: #fd1919;
+color: rgb(224, 194, 194);
 } */
 
 
-.box{
-width: 460px;
-height: 380px;
-border: rgb(8, 8, 8) solid 2px;
-border-radius: 20px;
-background-color: rgba(240,239,239,255);
-margin-left: auto;
-margin-right: auto;
-margin-top: 40px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-}
-
-.msg{
-margin-left: 53px;
-}
-
-.field{
-width: 350px;
-height: 35px;
-border-radius: 10px;
-position: relative;
-padding-left: 80px;
-/* border:blue 4px; */
-margin-left: 53px;
-}
-.field2{
-width: 350px;
-height: 100px;
-border-radius: 20px;
-border: black;
-margin-left: 53px;
-}
-
-.sendbutton{
-width: 70px;
-height: 500px;
-border-radius: 20px;
-margin-left: 353px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-background-color: rgb(43, 226, 83);
+.hbar {
+background-image: url("/products in homepage//images/heading_image.png");
+background-repeat: no-repeat;
+height: 150px;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .homefoot {
-position: absolute;
+position: fixed;
 left: 0;
-bottom: 0%;
+bottom: 0;
 width: 100%;
 text-align: center;
+color: #000;
 }
 
-.bigdog{
-width: 24%;
-height: 45%;
-position: absolute;
-margin-left: 935px;
-margin-top:-339px;
+
+#search {
+font-size: large;
+font: arial;
+height: 37px;
+width: 400px;
+margin-left: 50px;
+text-indent: 20px;
+border: 2px;
+border-radius: 10px;
+position: relative;
+margin-right: 140px;
+margin-top: 30px;
 }
+
+.hbar svg {
+margin-left: 180px;
+}
+
+.signhome {
+margin-right: 20px;
+}
+
+#sign {
+font-size: large;
+width: 90px;
+height: 45px;
+
+border: 2px;
+border-radius: 16px;
+}
+
+#sign:hover {
+transform: scale(1.15);
+}
+
+dropdown-menu:hover,
+dropdown-item:hover,
+a:hover {
+transform: scale(1.2);
+background-color: rgb(23, 132, 160);
+}
+
+.nav-item dropdown :hover .dropdown-menu {
+display: block;
+}
+
+.nav-link{
+margin-right: 130px;
+}
+
+.page-footer font-small homefoot:hover {
+transform: scale(1.2);
+}
+
+.navdiv{
+box-shadow: -24px 29px 21px -8px rgba(59, 59, 82, 0.3);
+
+}
+
+.hometag{
+background-image: linear-gradient(to right top, #b5bcc4, #a3b3c5, #91abc7, #7da2c8, #689ac9);
+}
+
+.botfoot {
+background-color: #bbb3b3;
+border-radius: 10px;
+height: 30px;
+}
+
+.cform{
+    box-shadow: -24px 29px 21px -8px rgba(30, 30, 60, 0.31);
+}
+
+.low{
+    box-shadow: 4px 39px 24px -8px rgba(30, 30, 60, 0.31);
+}
+
