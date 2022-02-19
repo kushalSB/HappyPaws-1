@@ -14,7 +14,8 @@ import json
 from django.contrib.auth import authenticate, login, logout
 import datetime
 from django.contrib import messages
-
+from firstpro.decorators import *
+from django.contrib.auth.decorators import login_required
 
 def login_view(request):
     users = User.objects.all()
@@ -65,10 +66,13 @@ def registration_view(request):
 
     return render(request, 'registration.html', context)
 
-
+@login_required(login_url='login')
+@admin_restricted
 def admin_view(request):
     return render(request, "owner/admin.html")
 
+@login_required(login_url='login')
+@admin_restricted
 def admin_order_view(request):
     checkout = Shipping.objects.all()
     orders_customer = Order.objects.all()

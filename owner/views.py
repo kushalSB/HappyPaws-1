@@ -11,8 +11,11 @@ from checkout.forms import *
 import datetime
 from contact.models import *
 from contact.views import *
+from firstpro.decorators import *
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='login')
+@admin_restricted
 def delete_shipping_order(request, pk):
     order = OrderProduct.objects.get(id=pk)
     if request.method == 'POST':
@@ -21,18 +24,22 @@ def delete_shipping_order(request, pk):
     context = {}
     return render(request, 'owner/delete_shipping.html', context)
 
+@login_required(login_url='login')
+@admin_restricted
 def delete_shipping_order(request, pk):
     order = OrderProduct.objects.get(id=pk)
     order.delete()
     return redirect('/owner-orders/')
 
-
+@login_required(login_url='login')
+@admin_restricted
 def manageCustomer(request):
     customer = Customer.objects.all()
     context = {'customers': customer}
     return render(request, 'owner/manage_customer.html', context)
 
-
+@login_required(login_url='login')
+@admin_restricted
 def updateCustomer(request, pk):
     customer = Customer.objects.get(id=pk)
     user = request.user
@@ -65,17 +72,22 @@ def updateCustomer(request, pk):
 #     context = {'customer': customer}
 #     return render(request, 'owner/deleteCustomer.html', context)
 
-
+@login_required(login_url='login')
+@admin_restricted
 def manageProduct(request):
     product = Product.objects.all()
     context = {'products': product}
     return render(request, 'owner/manageProduct.html', context)
 
+@login_required(login_url='login')
+@admin_restricted
 def deleteCustomer(request, pk):
     customer = Customer.objects.get(id=pk)
     customer.delete()
     return redirect('/manage-customer/')
 
+@login_required(login_url='login')
+@admin_restricted
 def updateProduct(request, pk):
     product = Product.objects.get(id=pk)
     category = Category.objects.all()
@@ -111,11 +123,15 @@ def updateProduct(request, pk):
     
 #     return render(request, 'owner/deleteproduct.html', context)
 
+@login_required(login_url='login')
+@admin_restricted
 def deleteProduct(request,pk):
     product = Product.objects.get(id=pk)
     product.delete()
     return redirect("/manage-product/")
 
+@login_required(login_url='login')
+@admin_restricted
 def createOrder(request):
     orderform = OrderForm()
     orderproductform = OrderProductForm()
@@ -152,6 +168,8 @@ def createOrder(request):
     context = {'customer': customer, 'product': product}
     return render(request, 'owner/createorder.html', context)
 
+@login_required(login_url='login')
+@admin_restricted
 def updateOrder(request, pk):
     orderform = OrderForm()
     orderproductform = OrderProductForm()
@@ -194,7 +212,16 @@ def updateOrder(request, pk):
     'orderCustomer': orderCustomer_object}
     return render(request, 'owner/updateOrder.html', context)
 
+@login_required(login_url='login')
+@admin_restricted
 def manageMessages(request):
     messages = Contact.objects.all()
     context = {'messages': messages}
     return render(request, "owner/messages.html", context)
+
+@login_required(login_url='login')
+@admin_restricted
+def deleteMessage(request,pk):
+    contact = Contact.objects.get(id=pk)
+    contact.delete()
+    return redirect("/manage-message/")
