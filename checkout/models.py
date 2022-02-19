@@ -10,6 +10,10 @@ class Shipping(models.Model):
     city = models.CharField(max_length=200, null=True)
     address = models.CharField(max_length=200, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
+<<<<<<< HEAD
+=======
+    
+>>>>>>> frontend
 
     def __str__(self):
         return self.address

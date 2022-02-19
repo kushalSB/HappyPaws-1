@@ -49,9 +49,13 @@ INSTALLED_APPS = [
     'customer',
     'checkout',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     'notification',
 >>>>>>> notice_backend
+=======
+    'owner',
+>>>>>>> frontend
 ]
 
 MIDDLEWARE = [

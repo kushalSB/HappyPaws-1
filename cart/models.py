@@ -1,4 +1,8 @@
 from re import S
+<<<<<<< HEAD
+=======
+import re
+>>>>>>> frontend
 from django.db import models
 from django.conf import settings
 from django.db.models.deletion import CASCADE
@@ -12,10 +16,16 @@ class Order(models.Model):
     ordered_date = models.DateTimeField(auto_now_add=True)
     order_completed = models.BooleanField(default=False)
     order_id = models.CharField(max_length=200, null=True)
+<<<<<<< HEAD
 
     def __str__(self):
         return str(self.customer)
 
+=======
+    used_discount_points = models.IntegerField(default=0, null=True, blank=True)
+    
+ 
+>>>>>>> frontend
     @property
     def getCartTotal(self):
         ordereditems = self.orderproduct_set.all()
@@ -35,6 +45,19 @@ class Order(models.Model):
         for i in ordereditems:
             shipping = True
         return shipping
+<<<<<<< HEAD
+=======
+    
+    @property
+    def getTotalafterDiscount(self):
+        if self.used_discount_points==1:
+            total =  self.getCartTotal - ((5/100) * self.getCartTotal)
+        elif self.used_discount_points==2:
+           total = self.getCartTotal - ((10/100) * self.getCartTotal)
+        elif self.used_discount_points==3:
+           total = self.getCartTotal - ((15/100) * self.getCartTotal)
+        return total
+>>>>>>> frontend
 
         
         
@@ -43,7 +66,11 @@ class OrderProduct(models.Model):
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> frontend
     def __str__(self):
         return ("Order no: " + str (self.id))
    
@@ -51,7 +78,12 @@ class OrderProduct(models.Model):
     def getTotal(self):
         total = self.item.price * self.quantity
         return total
+<<<<<<< HEAD
 
+=======
+    
+    
+>>>>>>> frontend
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('customer', 'ordered_date', 'order_id')

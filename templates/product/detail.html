@@ -16,6 +16,7 @@
   <title>Prouct Detail</title>
 </head>
 
+<<<<<<< HEAD
 <body>
   <div class="container-fluid">
     <div class="row">
@@ -159,3 +160,84 @@
 </body>
 
 </html>
+=======
+
+
+<div class="row">
+  <div class="col-md-3 prodimg">
+    <img src="{{object.imageurl}}" alt="" />
+  </div>
+
+  <div class="col-md-5">
+    <div class="prod_title">
+      {{object.title}}
+    </div>
+
+    <div class="price">
+      {{object.price}}
+    </div>
+
+    <div class="quantitynumber">
+      <div class="row">
+        <div class="col-sm-4">
+          Quantity
+          <div class="input-group">
+
+
+            <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 70px"><br>
+              <button class="btn btn-primary btn-md my-0 p" type="submit" style="margin-left: 10px;">
+
+                Add to cart
+
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="buy">
+      <button type="button" class="btn btn-secondary btn-lg buynow">Buy Now</button>
+      <button type="button" class="btn btn-secondary btn-lg addcart update-cart-data" data-product="{{object.id}}"
+        data-action="add">Add to cart</button>
+    </div>
+  </div>
+  <!-- about product detail here -->
+  <div class="col-md-4">
+    <div class="prod_title">
+      About this item
+    </div>
+    <table class="table aboutprod">
+      <tbody>
+        <tr>
+          <th scope="row">Plant or Animal Product Type</th>
+          <td>Seaweed</td>
+        </tr>
+        <tr>
+          <th scope="row">Specific Uses for product</th>
+          <td>Aquarium</td>
+        </tr>
+        <tr>
+          <th scope="row">Colour</th>
+          <td>Green</td>
+        </tr>
+        <tr>
+          <th scope="row">Item Dimensions(LxWxH)</th>
+          <td>1.97 x 1.97 x 11.81 inches</td>
+        </tr>
+        <tr>
+          <th scope="row">Material</th>
+          <td>Plastic</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}
+>>>>>>> frontend

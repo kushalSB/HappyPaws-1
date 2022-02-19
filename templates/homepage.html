@@ -1,6 +1,7 @@
 {% extends 'rootpage.html' %}
 {%load static%}
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
@@ -87,6 +88,18 @@
                 </nav>
             </div>
 
+=======
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/happypaws.css' %}" />
+</head>
+
+
+<body>
+
+    
+>>>>>>> frontend
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -140,6 +153,7 @@
                 <!-- New arrivals section-->
 
                 <div class="row prodimages">
+<<<<<<< HEAD
                     <h4>New arrivals</h4>
                     {% for product in products %}
                     <div class="col-lg-3">
@@ -147,6 +161,17 @@
                         <div class="card box">
 
                             <a href="{% url 'product' product.id %}"><img class="card-img-top" src="{{product.imageurl}}" alt="Card image cap">
+=======
+                    {% for category in object %}
+                    <h4>{{category.name}}</h4>
+                    {%for product in category.product_set.all %}
+                    <div class="col-lg-3">
+
+                        <div class="card box">
+
+                            <a href="{% url 'product' product.id %}"><img class="card-img-top"
+                                    src="{{product.imageurl}}" alt="Card image cap">
+>>>>>>> frontend
                             </a>
                             <div class="card-body">
 
@@ -159,9 +184,18 @@
 
 
                         </div>
+<<<<<<< HEAD
                         
 
                     </div>
+=======
+
+
+                    </div>
+                    {% endfor %}
+                    
+                    
+>>>>>>> frontend
 
 
                     {% endfor %}
@@ -169,6 +203,7 @@
 
 
 
+<<<<<<< HEAD
                 <!-- Pets section-->
                 <div class="row prodimages">
                     <h4>Pets</h4>
@@ -247,14 +282,24 @@
     </footer>
     <!-- Footer -->
     </div>
+=======
+            </div>
+     
+>>>>>>> frontend
 
     {% endblock %}
 
 
 
 
+<<<<<<< HEAD
 
 </body>
 
 
 </html>
+=======
+    
+</body>
+
+>>>>>>> frontend
