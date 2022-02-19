@@ -1,0 +1,175 @@
+body {
+    background-color: #fdfcfc;
+}
+
+/* .bg{
+    opacity: 0.5;
+} */
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #e7d8e8;
+}
+
+button {
+    border-radius: 6px;
+    background-color: #e7d8e8;
+}
+
+.navdiv {
+    height: 50px;
+}
+
+.navlist {
+    margin-right: 30px;
+    /* background-color: aqua; */
+}
+
+.movenav {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hbar {
+    background-image: url("images/images.png");
+    background-repeat: no-repeat;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#search {
+    font-size: large;
+    font: arial;
+    height: 37px;
+    width: 400px;
+    margin-left: 50px;
+    text-indent: 20px;
+    border: 2px;
+    border-radius: 10px;
+    position: relative;
+    margin-right: 140px;
+    margin-top: 30px;
+}
+
+.hbar svg {
+    margin-left: 190px;
+}
+
+.signhome {
+    margin-right: 20px;
+}
+
+#sign {
+    font-size: large;
+    width: 90px;
+    height: 45px;
+
+    border: 29px;
+    border-radius: 16px;
+}
+
+#sign:hover {
+    color: white;
+}
+
+.homefoot {
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    text-align: center;
+}
+
+.bg{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd3XyU0yKUq-a_ps4aALUpMTOV3ky5XVZ3SQ&usqp=CAU');  
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+
+.animal_product{
+    margin-top: 90px;
+    
+}
+
+
+.food{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(95, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.house{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.belt{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.dress{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.medical products{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(95, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.hostel{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.fishbowl{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+.birdcave{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: rgb(90, 90, 90) solid 15px;
+    cursor: pointer;
+}
+
+
+.categoryline img:hover{
+    transform: scale(1.6);
+    animation-timing-function: ease-in;
+}
+
