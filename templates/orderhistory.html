@@ -20,7 +20,7 @@
         <div class="col-md-3"></div>
         <div class="col-md-6 mt-3 notice">
             <div class="mt-3 mb-3">
-                <h5>Notifications</h5>
+                <h5>Order history</h5>
             </div>
             <div class="col-sm-10 ">
                 {% for orders in order_history %}
@@ -31,9 +31,9 @@
                         You had ordered <p class="card-text">{{order.quantity}} {{order.item.title}}</p>
                         <form action="" method="POST">
                             {% csrf_token %}
-                            <a href="#" class="btn btn-danger" role="button">
+                            <!-- <a href="{% url 'delete' user.customer.id %}" class="btn btn-danger" role="button">
                                 Delete
-                            </a>
+                            </a> -->
                         </form>
                     </div>
                 </div>

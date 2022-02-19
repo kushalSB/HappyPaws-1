@@ -129,6 +129,10 @@ class TestUrls(SimpleTestCase):
     def test_change_password(self):
         url = reverse('change-password',args= [1])
         self.assertEquals(resolve(url).func, changePassword)
+    
+    def test_notification_view(self):
+        url = reverse('notifications')
+        self.assertEquals(resolve(url).func, notification_view)
 
 class test_views(TestCase):
     def test_customer_dashboard(self):
@@ -546,7 +550,7 @@ class test_views(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'product/detail.html')
     
-    def text_notification_view(self):
+    def test_notification_view(self):
         user = User.objects.create(username="username")
         user.set_password('password')
         user.save()
@@ -565,9 +569,43 @@ class test_views(TestCase):
         )
 
         notification = Notification.objects.create(
+            id = 'c878fa17-772e-4284-a3e0-e9903dcc88cb',
             title='Testing notification',
             description = 'testing the notification feature'
         )
-        url = reverse('notifications', args=[notification.id])
+        url = reverse('notifications')
+        response = client.get(url)
+        
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'notifications.html')
+
+    def test_notification_delete(self):
+        user = User.objects.create(username="username")
+        user.set_password('password')
+        user.save()
+        client = Client()
+        logged_in = client.login(username="username", password="password")
+
+        
+        customer = Customer.objects.create(
+            id=1,
+            user=user,
+            name='full name',
+            email='test@email.com',
+            phone='918181818',
+            username='username',
+            password='password'
+        )
+        
+        notification = Notification.objects.create(
+            title='Testing notification',
+            description = 'testing the notification feature'
+        )
+        
+        url = reverse('delete')
+        response = client.post(url)
+        
+        self.assertEquals(response.status_code, 302)
+        self.assertRedirects(response, '/notifications/')
 
     # admin part test 
