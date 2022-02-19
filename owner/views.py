@@ -91,6 +91,7 @@ def deleteCustomer(request, pk):
 def updateProduct(request, pk):
     product = Product.objects.get(id=pk)
     category = Category.objects.all()
+    subCategory = NewSubCategory.objects.all()
     form = ProductForm(request.POST, request.FILES)
     imageform = ImageForm(request.POST, request.FILES, instance=product)
     if request.method == 'POST':
@@ -100,7 +101,10 @@ def updateProduct(request, pk):
         product.description = request.POST.get('description')
         category_id = request.POST.get('category')
         category_object = Category.objects.get(id=category_id)
+        subcategory_id = request.POST.get('subcategory')
+        subcategory_object = NewSubCategory.objects.get(id=subcategory_id)
         product.category = category_object
+        product.subcategory = subcategory_object
         product.stock_quantity = request.POST.get('stock_quantity')
         product.type = request.POST.get('type')
         product.purpose = request.POST.get('purpose')
@@ -111,7 +115,7 @@ def updateProduct(request, pk):
         imageform.save()
         return redirect('/manage-product/')  
 
-    context = {'form': form, 'product': product, 'category': category, 'imageform': imageform}
+    context = {'form': form, 'product': product, 'category': category, 'imageform': imageform, 'subcategory': subCategory}
     return render (request,'owner/updateproduct.html', context )
 
 # def deleteProduct(request, pk):

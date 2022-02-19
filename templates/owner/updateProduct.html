@@ -62,11 +62,16 @@
                 </div>
                 <div class="form-group" style="flex: 1;">
                     <label>
-                        Type
+                        Sub Category
                     </label>
     
-                    <input id="login-input" type="text" name="type" value="{{product.type}}" class="form-control" />
+                    <select id="login-input" name="subcategory" class="form-control">
+                        {%for i in subcategory%}
+                        <option value={{i.id}}>{{i.name}}</option>
+                        {% endfor %}
+                    </select>
                 </div>
+               
             
             </div>
             <div style="display: flex; align-items: stretch;">
@@ -110,6 +115,13 @@
                     </label>
     
                     <input id="login-input" type="text" name="stock_quantity" value="{{product.stock_quantity}}" class="form-control" />
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>
+                        Type
+                    </label>
+    
+                    <input id="login-input" type="text" name="type" value="{{product.type}}" class="form-control" />
                 </div>
                 
             
