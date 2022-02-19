@@ -19,6 +19,11 @@ import json
 from django.contrib.auth import authenticate, login, logout
 import datetime
 
+<<<<<<< HEAD
+=======
+from notification.models import Notification
+
+>>>>>>> notice_backend
 
 def login_view(request):
     if request.method == 'POST':
@@ -206,4 +211,24 @@ def searchProducts(request):
     context = {'products': products}
 
 
+<<<<<<< HEAD
     return render(request, 'search.html', context)
+=======
+    return render(request, 'search.html', context)
+
+def notification_view(request):
+    notifications = Notification.objects.all
+    context = {'notice':notifications}
+    return render(request, "notifications.html", context)
+
+def notification_delete(request,pk):
+
+    notifications = Notification.objects.get(id=pk)
+
+    if request.method == 'POST':
+        notifications.delete()
+        return redirect('home')
+        
+    context = {'object': notifications}
+    return render(request, "delete_template.html", context)
+>>>>>>> notice_backend

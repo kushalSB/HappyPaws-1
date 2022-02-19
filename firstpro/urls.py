@@ -20,7 +20,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 from pages.views import (homepage_view,
                          contact_view,
+<<<<<<< HEAD
                          login_view,
+=======
+                         login_view, notification_view,
+>>>>>>> notice_backend
                          product_view,
                          cart_view,
                          admin_view,
@@ -28,7 +32,13 @@ from pages.views import (homepage_view,
                          update_data_view,
                          registration_view,
                          processCheckout,
+<<<<<<< HEAD
                          searchProducts
+=======
+                         searchProducts,
+                         notification_view,
+                         notification_delete,
+>>>>>>> notice_backend
                          )
 
 
@@ -44,7 +54,13 @@ urlpatterns = [
     path('checkout/', checkout_view, name='checkout'),
     path('update-cart/', update_data_view),
     path('process-checkout/', processCheckout, name='process-checkout'),
+<<<<<<< HEAD
     path('search/', searchProducts, name= 'search')
+=======
+    path('search/', searchProducts, name= 'search'),
+    path('notifications/', notification_view, name='notifications'),
+    path('delete/<str:pk>/', notification_delete, name='delete'),
+>>>>>>> notice_backend
 
 ]
 
