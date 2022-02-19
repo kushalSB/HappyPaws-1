@@ -135,7 +135,7 @@ class test_views(TestCase):
     def test_customer_dashboard(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -161,7 +161,7 @@ class test_views(TestCase):
     def test_update_customer(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -201,7 +201,7 @@ class test_views(TestCase):
     def test_delete_customer(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -265,13 +265,13 @@ class test_views(TestCase):
         })
 
         print(response)
-        self.assertEquals(response.status_code, 302)
-        self.assertTemplateUsed(response, 'register')
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, "registration.html")
 
     def test_product_dashboard(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -297,7 +297,7 @@ class test_views(TestCase):
     def test_update_product(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -345,7 +345,7 @@ class test_views(TestCase):
     def test_delete_product(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -383,7 +383,7 @@ class test_views(TestCase):
     def test_adminCheckout(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -409,7 +409,7 @@ class test_views(TestCase):
     def test_addOrder(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -450,7 +450,7 @@ class test_views(TestCase):
     def test_updateOrder(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
@@ -501,7 +501,7 @@ class test_views(TestCase):
     def test_del_shipping_order(self):
         user = User.objects.create(username="username")
         user.set_password('password')
-        group = Group.objects.get(name='admin')
+        group = Group.objects.create(name='admin')
         user.groups.add(group)
         user.save()
         client = Client()
