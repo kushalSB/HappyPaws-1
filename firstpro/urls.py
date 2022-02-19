@@ -89,7 +89,8 @@ urlpatterns = [
     path('root/', rootpage, name="rootpage"),
     path('contact/', contact, name="contact"),
     path('user-profile/', user_profile_view, name='user-profile'),
-    path('delete-account/<int:pk>/', deleteAccount, name='delete-account'),
+    path('delete-account/<int:pk>/', delete_account, name='delete-account'),
+  
     path('change-password/<int:pk>/', changePassword, name='change-password'),
     path('update-account/<int:pk>/', update_account, name='update-account'),
     path('baseuser', baseuser),
