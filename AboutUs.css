@@ -1,0 +1,144 @@
+
+
+.parallax {
+    background-attachment: inherit !important;
+}
+
+.company-heading h1 {
+    margin-bottom: 40px;
+    line-height: 80px;
+    color: rgb(87, 82, 82);
+    font-weight: 700 !important;
+    text-align: center;
+}
+.red-border {
+    width: 50%;
+    border-bottom: 1px solid #d2282e;
+    margin: 0 auto;
+    height: 16px;
+}
+.company-sections p {
+    margin-top: 20px;
+}
+.ct-u-size22 {
+    font-size: 22px;
+}
+.ct-u-fontWeight300 {
+    font-weight: 300;
+}
+.marginTop40 {
+    margin-top: 40px !important;
+}
+.ct-u-paddingBoth100 {
+    padding: 100px 15px;
+}
+.culture-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.45),rgba(0, 0, 0, 0.45));
+    /* background-color: #095c87; */
+    /* color: #fff; */
+}
+.company-sections, .careers-sections, .left-headquarter-section-img, .right-headquarter-section-img {
+    text-align: center;
+}
+.ct-u-paddingBoth100 {
+    padding: 100px 15px;
+}
+.company-sections h2, .careers-sections h2, .perks-section h2 {
+    font-weight: 800;
+    font-size: 50px;
+}
+.company-sections h2, .company-sections h3, .careers-sections h2, .perks-section h2 {
+    font-family: 'proxima-nova', sans-serif;
+}
+.slick-slider {
+    margin-bottom: 0;
+}
+
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slider .item {
+    overflow: hidden;
+}
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.logos {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+ul.logos li {
+    cursor: pointer;
+}
+.logos > li {
+    float: left;
+    width: 16.66666%;
+    padding: 5px;
+}
+.logos .logos-inner {
+    position: relative;
+}
+.slick-slide img {
+    display: inline-block;
+}
+.logo-image {
+    position: relative;
+    width: 100%;
+}
+ul.logos li {
+    cursor: pointer;
+}
+.logos > li {
+    float: left;
+    width: 16.66666%;
+    padding: 5px;
+}
+.logos .logos-inner {
+    position: relative;
+}
+
+
+.fa {
+  font-size: 42px;
+}
+.btn-solodev-red-reversed {
+    background-color: rgb(252, 212, 212);
+    color: #d2282e;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 12px 35px;
+}
+.btn, .btn-blk {
+    font-size: 18px !Important;
+}
+a:hover, a:focus {
+    text-decoration: none;
+}
+.ct-u-size19 {
+ margin-top: 40px; 
+}
+a:hover {
+    color: #000;
+}
+
+.ct-u-paddingBottom100 {
+  margin-top: 40px;
+}
+.culture-section {
+  background-size: cover;
+  color: rgb(46, 45, 45);
+}
