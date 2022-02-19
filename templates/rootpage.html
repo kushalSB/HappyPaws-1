@@ -81,12 +81,32 @@
                             <li><a class="dropdown-item" href="{% url 'notifications' %}">Notification</a></li>
                             <li><a class="dropdown-item" href="{% url 'update-account' user.customer.id %}">Update
                                     Details</a></li>
-                            <li><a class="dropdown-item" href="#">Delete Account</a></li>
+                            <li><a  class="dropdown-item"  data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Delete Account</a></li>
                             <li><a class="dropdown-item" href="{% url 'logout'%}">Logout</a> </li>
                         </ul>
                     </a>
 
 
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                <a href="/delete-account/{{user.customer.id}}" type="submit" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -200,6 +220,18 @@
         </div>
         <br>
         <br>
+        {% for message in messages %}
+        <script>
+          var url = '/'
+          alert('{{message}}')
+          if ('{{message}}' == 'Your acccount has been deleted') {
+            window.location.href = "{%url 'home'%}"
+  
+          }
+  
+  
+        </script>
+        {% endfor %}
 
         {% block content %}
 
@@ -243,7 +275,7 @@
                 <!-- Grid column -->
                 <div class="col-md-2 mb-3 pt-1">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!">Contact us</a>
+                        <a href="{% url 'create-message' %}">Contact us</a>
                     </h6>
                 </div>
                 <!-- Grid column -->

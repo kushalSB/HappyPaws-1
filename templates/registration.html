@@ -9,11 +9,7 @@
   <link rel="stylesheet" href="{% static 'css/registration.css' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-{% for message in messages %}
 
-{{message}}
-
-{% endfor %}
 <br>
 <br>
 <div style=" padding-left: 500px;">
@@ -49,16 +45,30 @@
           </div>
           <div style="padding-left: 20px;" class="input-box">
             <span class="details"><B>Confirm Password</b></span>
-            <input type="password" name="cpassword" placeholder="Confirm your password" required>
+            <input type="password" name="confirmpassword" placeholder="Confirm your password" required>
           </div>
         </div>
 
         <div class="button">
-          <input type="submit" class="btn btn-primary"style="margin-right: 15px;" value="Register">
+          <input type="submit" class="btn btn-primary" style="margin-right: 15px;" value="Register">
           <button class="btn btn-secondary"> Cancel</button>
         </div>
         <br>
       </form>
+
+      {% for message in messages %}
+      <script>
+        var url = '/login/'
+        alert('{{message}}')
+        if ('{{message}}' == 'Your account has been registered') {
+          window.location.href = "{%url 'login'%}"
+
+        }
+
+
+      </script>
+      {% endfor %}
+
     </div>
   </div>
 </div>

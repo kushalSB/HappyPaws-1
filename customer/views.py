@@ -1,3 +1,4 @@
+from email import message
 from urllib import request
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse, response
@@ -12,10 +13,17 @@ from cart.models import *
 import json
 from django.contrib.auth import authenticate, login, logout
 import datetime
+from django.contrib import messages
 
 def user_profile_view(request):
     return render(request, 'customer/userprofile.html')
 
+def delete_account(request,pk):
+    customer = Customer.objects.get(id=pk)
+    customer.delete()
+    logout(request)
+    messages.success(request, "Your acccount has been deleted")
+    return redirect("/")
 
 def deleteAccount(request, pk):
     customer = Customer.objects.get(id=pk)
@@ -76,7 +84,8 @@ def order_history(request, pk):
         customer = Customer.objects.get(id=pk)
         user = request.user
         order = Order.objects.filter(customer=customer)
-        
+    else:
+        order = []
     context = {'order_history':order}
 
     return render(request, 'orderhistory.html', context)

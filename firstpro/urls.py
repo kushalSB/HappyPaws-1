@@ -89,7 +89,8 @@ urlpatterns = [
     path('root/', rootpage, name="rootpage"),
     path('contact/', contact, name="contact"),
     path('user-profile/', user_profile_view, name='user-profile'),
-    path('delete-account/<int:pk>/', deleteAccount, name='delete-account'),
+    path('delete-account/<int:pk>/', delete_account, name='delete-account'),
+  
     path('change-password/<int:pk>/', changePassword, name='change-password'),
     path('update-account/<int:pk>/', update_account, name='update-account'),
     path('baseuser', baseuser),
@@ -100,6 +101,11 @@ urlpatterns = [
 
     path('notifications/', notification_view, name='notifications'),
     path('delete/<str:pk>/', notification_delete, name='delete'),
+
+    path('create-message', message_view, name='create-message'),
+    path('manage-messages/', manageMessages, name='manage-message'),
+    path('delete-message/<int:pk>/', deleteMessage, name='delete-message'),
+
     path('orderhistory/<int:pk>/', order_history, name='orderhistory'),
 
 ]

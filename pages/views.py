@@ -1,3 +1,5 @@
+import imp
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse, response
 from django.contrib import auth
@@ -11,9 +13,12 @@ from cart.models import *
 import json
 from django.contrib.auth import authenticate, login, logout
 import datetime
-
+from django.contrib import messages
+from firstpro.decorators import *
+from django.contrib.auth.decorators import login_required
 
 def login_view(request):
+    users = User.objects.all()
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -26,7 +31,8 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return redirect('/')
-    return render(request, "login.html")
+    context = {'users': users}
+    return render(request, "login.html", context)
 
 def logoutUser(request):
     logout(request)
@@ -37,29 +43,36 @@ def registration_view(request):
 
     if request.method == 'POST':
         customer_form = CustomerForm(request.POST)
-
+        
         if customer_form.is_valid():
             un = customer_form.cleaned_data['username']
             em = customer_form.cleaned_data['email']
             pw = customer_form.cleaned_data['password']
+            cpw = request.POST.get('confirmpassword')
+            
 
-            user = User.objects.create_user(un, em, pw)
+            if pw == cpw:
+                user = User.objects.create_user(un, em, pw)
+                user.save()
+                customer = customer_form.save(commit=False)
+                customer.user = user
+                customer.save()
+                messages.success(request, 'Your account has been registered')
+            elif pw != cpw:
+                 messages.success(request, "Passwords don't match")
 
-            user.save()
-
-            customer = customer_form.save(commit=False)
-            customer.user = user
-            customer.save()
-            return redirect('/login/')
-
+        
     context = {'customer_form': customer_form}
 
     return render(request, 'registration.html', context)
 
-
+@login_required(login_url='login')
+@admin_restricted
 def admin_view(request):
     return render(request, "owner/admin.html")
 
+@login_required(login_url='login')
+@admin_restricted
 def admin_order_view(request):
     checkout = Shipping.objects.all()
     orders_customer = Order.objects.all()
@@ -132,7 +145,7 @@ def rootpage(request):
     return render(request, "rootpage.html", context)
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, 'contactnew.html')
 
 def grooming(request):
     return render(request, "services/grooming.html")

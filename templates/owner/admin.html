@@ -38,6 +38,15 @@
 
                         </a>
                     </li>
+                    <li class="list-group-item list-group-item-action {% if request.path == "/manage-message/" %} bg-primary {% endif %}"  >
+                        <a href="{% url 'manage-message'%}" style="text-decoration: none;">
+                            <p style="color: black;" class=" {% if request.path == "/manage-message/" %} text-light {% endif %}">
+                                Messages
+                            </p>
+
+
+                        </a>
+                    </li>
                 </ul>
 
             </aside>
