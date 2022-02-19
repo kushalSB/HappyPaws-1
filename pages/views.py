@@ -156,4 +156,9 @@ def pethostel(request):
 def vaccine(request):
     return render(request, "services/vaccine.html")
 
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
+def helppage(request):
+    return render(request, 'helppage.html')
 

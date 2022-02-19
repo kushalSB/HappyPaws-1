@@ -19,24 +19,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from pages.views import (grooming, homepage_view,
-
-                         login_view,
-                         logoutUser,
-
-
-                         admin_view,
-                         admin_order_view, pethostel,
-
-
-                         registration_view,
-
-                         searchProducts,
-                         update_discount_view,
-
-                         rootpage,
-                         contact, vaccine,
-                         )
+from pages.views import *
 from products.views import *
 
 from customer.views import *
@@ -88,6 +71,8 @@ urlpatterns = [
     path('update-discount/', update_discount_view, name='update-discount'),
     path('root/', rootpage, name="rootpage"),
     path('contact/', contact, name="contact"),
+    path('aboutus/', aboutus, name='aboutus' ),
+     path('helppage/', helppage, name='helppage' ),
     path('user-profile/', user_profile_view, name='user-profile'),
     path('delete-account/<int:pk>/', delete_account, name='delete-account'),
   
