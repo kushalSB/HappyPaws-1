@@ -680,6 +680,49 @@ class test_views(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'orderhistory.html')
     
+    def update_cart(self):
+        user = User.objects.create(username="username")
+        user.set_password('password')
+        group = Group.objects.create(name='admin')
+        user.groups.add(group)
+        user.save()
+        client = Client()
+        logged_in = client.login(username="username", password="password")
+
+        customer = Customer.objects.create(
+            id=1,
+            user=user,
+            name='full name',
+            email='test@email.com',
+            phone='918181818',
+            username='username',
+            password='password'
+        )
+        customer.refresh_from_db()
+       
+        product = Product.objects.create(
+            title='product title',
+            description ='product description',
+            price = 100
+        )
+        order = Order.objects.create(
+            customer=customer)
+        order.save()
+        orderProduct = OrderProduct.objects.create(
+             item=product, order=order, quantity=5)
+        items = order.orderproduct_set.all()
+        cartItems = order.getCartItems
+      
+        url = reverse('update-cart')
+        response = client.get(url, {
+            'productId': product.id,
+            'action': "add"
+        })
+
+        self.assertEquals(response.status_code, 200)
+        
+
+    
     def review_cart(self):
         user = User.objects.create(username="username")
         user.set_password('password')
