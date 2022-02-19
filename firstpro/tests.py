@@ -592,3 +592,97 @@ class test_views(TestCase):
         url = reverse('notifications', args=[notification.id])
 
     # admin part test 
+    def test_search(self):
+        user = User.objects.create(username="username")
+        user.set_password('password')
+        group = Group.objects.create(name='admin')
+        user.groups.add(group)
+        user.save()
+        client = Client()
+        logged_in = client.login(username="username", password="password")
+
+        customer = Customer.objects.create(
+            id=1,
+            user=user,
+            name='full name',
+            email='test@email.com',
+            phone='918181818',
+            username='username',
+            password='password'
+        )
+        customer.refresh_from_db()
+      
+        url = reverse('search')
+        response = client.get(url, {
+            'search': 'dog'
+        }
+    
+        )
+
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'search.html')
+    
+    def order_history(self):
+        user = User.objects.create(username="username")
+        user.set_password('password')
+        group = Group.objects.create(name='admin')
+        user.groups.add(group)
+        user.save()
+        client = Client()
+        logged_in = client.login(username="username", password="password")
+
+        customer = Customer.objects.create(
+            id=1,
+            user=user,
+            name='full name',
+            email='test@email.com',
+            phone='918181818',
+            username='username',
+            password='password'
+        )
+        customer.refresh_from_db()
+      
+        url = reverse('orderhistory', args=[customer.id])
+        response = client.get(url)
+
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'orderhistory.html')
+    
+    def review_cart(self):
+        user = User.objects.create(username="username")
+        user.set_password('password')
+        group = Group.objects.create(name='admin')
+        user.groups.add(group)
+        user.save()
+        client = Client()
+        logged_in = client.login(username="username", password="password")
+
+        customer = Customer.objects.create(
+            id=1,
+            user=user,
+            name='full name',
+            email='test@email.com',
+            phone='918181818',
+            username='username',
+            password='password'
+        )
+        customer.refresh_from_db()
+       
+        product = Product.objects.create(
+            title='product title',
+            description ='product description',
+            price = 100
+        )
+        order = Order.objects.create(
+            customer=customer)
+        order.save()
+        orderProduct = OrderProduct.objects.create(
+             item=product, order=order, quantity=5)
+        items = order.orderproduct_set.all()
+        cartItems = order.getCartItems
+      
+        url = reverse('checkout')
+        response = client.get(url)
+
+        self.assertEquals(response.status_code, 200)
+        self.assertTemplateUsed(response, 'checkout.html')
