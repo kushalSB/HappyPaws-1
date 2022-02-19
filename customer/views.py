@@ -70,3 +70,13 @@ def update_account(request, pk):
         return redirect('/user-profile/')
     context = {'form': form, 'customer': customer}
     return render(request, 'customer/updateAccount.html', context)
+
+def order_history(request, pk):
+    if request.user.is_authenticated:
+        customer = Customer.objects.get(id=pk)
+        user = request.user
+        order = Order.objects.filter(customer=customer)
+        
+    context = {'order_history':order}
+
+    return render(request, 'orderhistory.html', context)

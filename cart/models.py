@@ -68,7 +68,12 @@ class OrderProduct(models.Model):
         total = self.item.price * self.quantity
         return total
     
-    
+# class OrderHistory(models.Model):
+#     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)    
+#     ordered_date = models.DateTimeField(auto_now_add=True)
+#     order_completed = models.BooleanField(default=False)
+#     order_id = models.CharField(max_length=200, null=True)
+
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('customer', 'ordered_date', 'order_id')

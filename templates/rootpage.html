@@ -61,22 +61,26 @@
                     </form>
                 </div>
                 {% if user.is_authenticated %}
-                <div class="nav-item dropdown userhover "  style="padding-top: 14px; ">
-                    <a class="nav-link movenav" onclick="window.open(this.href)" id="drop" data-bs-toggle="dropdown" aria-expanded="false" href="{% url 'user-profile' %}">
+                <div class="nav-item dropdown userhover " style="padding-top: 14px; ">
+                    <a class="nav-link movenav" onclick="window.open(this.href)" id="drop" data-bs-toggle="dropdown"
+                        aria-expanded="false" href="{% url 'user-profile' %}">
                         <div style="text-align: end;" class="notransform">
-                            <svg style="color: black; text-align: end;" xmlns="http://www.w3.org/2000/svg" width="36" height="36"
-                                fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <svg style="color: black; text-align: end;" xmlns="http://www.w3.org/2000/svg" width="36"
+                                height="36" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                             </svg>
-                            
+
                             <label class="login-label" style=" color: black; ">
                                 <aside style="font-weight:500;"> {{user.customer.name}} </aside>
                             </label>
                         </div>
-                        
+
                         <ul class=" dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'orderhistory' user.customer.id %}">Order
+                                    History</a></li>
                             <li><a class="dropdown-item" href="{% url 'notifications' %}">Notification</a></li>
-                            <li><a class="dropdown-item" href="{% url 'update-account' user.customer.id %}">Update Details</a></li>
+                            <li><a class="dropdown-item" href="{% url 'update-account' user.customer.id %}">Update
+                                    Details</a></li>
                             <li><a class="dropdown-item" href="#">Delete Account</a></li>
                             <li><a class="dropdown-item" href="{% url 'logout'%}">Logout</a> </li>
                         </ul>
@@ -117,9 +121,10 @@
                                 </a>
                                 <div class="dropdown-menu one" aria-labelledby="navbarDropdown">
                                     <div class="dropdown pets">
-                                        <a class="dropdown-item" onclick="window.open(this.href)" href="{% url 'product-by-category' 'Pets' %}"
-                                            role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-item" onclick="window.open(this.href)"
+                                            href="{% url 'product-by-category' 'Pets' %}" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
                                             Pets
                                         </a>
 

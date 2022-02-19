@@ -104,6 +104,7 @@ urlpatterns = [
     path('create-message', message_view, name='create-message'),
     path('manage-messages/', manageMessages, name='manage-message'),
 
+    path('orderhistory/<int:pk>/', order_history, name='orderhistory'),
 
 ]
 
