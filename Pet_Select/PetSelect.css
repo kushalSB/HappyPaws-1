@@ -1,11 +1,19 @@
 body {
     background-color: #fdfcfc;
+<<<<<<< HEAD
     background-image: url('images/groupPic.jpg');  
 }
 
 .bg{
     opacity: 0.5;
 }
+=======
+}
+
+/* .bg{
+    opacity: 0.5;
+} */
+>>>>>>> petSelect
 
 a {
     text-decoration: none;
@@ -98,9 +106,25 @@ margin-top: 45px;
     text-align: center;
 }
 
+<<<<<<< HEAD
 
 .animal_photos{
     margin-top: 150px;
+=======
+.bg{
+    background-image: url('images/groupPic.jpg');  
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+
+.animal_photos{
+    margin-top: 150px;
+    
+>>>>>>> petSelect
 }
 /* .rounded{
     border-radius: 50%;
