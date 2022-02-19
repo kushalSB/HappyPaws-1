@@ -567,7 +567,7 @@ class test_views(TestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'product/detail.html')
     
-    def text_notification_view(self):
+    def test_notification_view(self):
         user = User.objects.create(username="username")
         user.set_password('password')
         user.save()
@@ -586,10 +586,42 @@ class test_views(TestCase):
         )
 
         notification = Notification.objects.create(
+            id = '6db5175c-d5cd-4e9c-a054-54e3d54474ec',
             title='Testing notification',
             description = 'testing the notification feature'
         )
-        url = reverse('notifications', args=[notification.id])
+        url = reverse('notifications')
+        response = client.get(url)
+
+        self.assertEquals(response.status_code, 200)
+    
+    def test_notification_delete(self):
+        user = User.objects.create(username="username")
+        user.set_password('password')
+        user.save()
+        client = Client()
+        logged_in = client.login(username="username", password="password")
+
+        
+        customer = Customer.objects.create(
+            id=1,
+            user=user,
+            name='full name',
+            email='test@email.com',
+            phone='918181818',
+            username='username',
+            password='password'
+        )
+
+        notification = Notification.objects.create(
+            id = '6db5175c-d5cd-4e9c-a054-54e3d54474ec',
+            title='Testing notification',
+            description = 'testing the notification feature'
+        )
+        url = reverse('delete', args=[notification.id])    
+        response = client.post(url)
+
+        self.assertEquals(response.status_code, 302)    
 
     # admin part test 
     def test_search(self):
