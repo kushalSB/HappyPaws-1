@@ -1,6 +1,4 @@
-from re import T
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
 from django.contrib import admin
 
@@ -18,6 +16,8 @@ class Customer(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     reward_point = models.FloatField(default = 0, null=True, blank=True)
 
+    user_email_verified = models.BooleanField(default = False)
+
 
  
     
@@ -27,7 +27,7 @@ class Customer(models.Model):
         return total
     
     def __str__(self):
-        return self.name
+        return self.username
 
 
 class CustomerAdmin(admin.ModelAdmin):
